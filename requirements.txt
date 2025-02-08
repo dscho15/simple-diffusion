@@ -4,3 +4,4 @@ numpy
 matplotlib
 wandb
 einops
+git+https://SimonLarsen@github.com/SimonLarsen/frogbox.git@v0.5.2b

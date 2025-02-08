@@ -43,7 +43,6 @@ class CrossAttention(Module):
         q = self.q(x)
         kv = self.kv(y)
         k, v = kv.chunk(2, dim=-1)
-
         h = self.mha(query=q, key=k, value=v)[0]
         return self.proj(h)
 

@@ -1,0 +1,45 @@
+{
+    "type": "supervised",
+    "project": "example",
+    "meta": {},
+    "log_interval": "epoch_completed",
+    "batch_size": 32,
+    "loader_workers": 0,
+    "max_epochs": 50,
+    "gradient_accumulation_steps": 1,
+    "metrics": {},
+    "checkpoints": [
+        {
+            "mode": "max",
+            "num_saved": 3,
+            "interval": "epoch_completed"
+        }
+    ],
+    "model": {
+        "class_name": "models.example.ExampleModel",
+        "params": {}
+    },
+    "losses": {},
+    "datasets": {
+        "train": {
+            "class_name": "datasets.example.ExampleDataset",
+            "params": {}
+        },
+        "val": {
+            "class_name": "datasets.example.ExampleDataset",
+            "params": {}
+        }
+    },
+    "loaders": {},
+    "optimizer": {
+        "class_name": "torch.optim.AdamW",
+        "params": {
+            "lr": 0.001
+        }
+    },
+    "lr_scheduler": {
+        "type": "cosine",
+        "end_value": 1e-7,
+        "warmup_steps": 0
+    }
+}
